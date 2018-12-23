@@ -12,5 +12,27 @@ public class Factorial {
          *
          */
 
+        int n=5;
+        int result=1;
+
+        for(int i=1;i<=5;i++){
+          result=result*i;
+
+
+        }
+        System.out.println("The factorial of 5 is :" +result);
+        System.out.println("This is also factorial of 5 using recursion "+factorial(n));
     }
+
+     public static int factorial(int n){
+         if(n==0) {
+             return 1;
+         }else{return n* factorial(n-1);
+         }
+        }
+
+
+
+
+
 }

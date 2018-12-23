@@ -13,6 +13,20 @@ public class PrimeNumber {
 		 *
 		 */
 
+		int i=1000000;
+		int count=0;
+		for(int j=2; j<i;j++){
+			if(i%j==0){
+				count++;
+				break;
+			}
+		}
+
+		if(count==0){
+			System.out.println("prime number");
+		}else{
+			System.out.println("non prime number");
+		}
 	}
 
 }

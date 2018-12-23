@@ -7,6 +7,7 @@ import java.util.List;
 
 public class LowestNumber {
 
+
 	public static void main(String[] args) {
 		/*
 		 * Write java solution to find the lowest number from this array.
@@ -28,7 +29,8 @@ public class LowestNumber {
 		System.out.println("Data is reading from the Table (tbl_primenumber) and displaying to the console");
 		for(String st:lowestValue){
 			System.out.println(st);
-		}
+
 	}
 
+               }
 }
