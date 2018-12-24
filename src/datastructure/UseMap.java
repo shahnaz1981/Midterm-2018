@@ -28,7 +28,7 @@ public class UseMap {
 
 
 
-		Map<String, List<String>> map = new HashMap<String,List<String>>();
+	Map	<String, List<String>> map = new HashMap<String,List<String>>();
 		map.put("Bangladesh", bdCity);
 		map.put("USA", usaCity);
 
@@ -44,18 +44,22 @@ public class UseMap {
 
 
 			ConnectToSqlDB connect = new ConnectToSqlDB();
+			//Map	<String, List<String>> mapdata1 = new HashMap<String,List<String>>();
+
 			List<String> mapdata = new ArrayList();
-
-			try{connect.insertDataFromMapToSqlTable((Map<String, List<String>>) bdCity,"Table1", "bdCity");
-			connect.insertDataFromMapToSqlTable((Map<String, List<String>>) usaCity,"Table2","usaCity");
-		    mapdata=connect.readDataBase("Table1","bdCity");
-
+			List<String> mapdata1 = new ArrayList();
+			try{connect.insertDataFromMapToSqlTable((Map<String, List<String>>) map,"Table1", "bdCity");
+			connect.insertDataFromMapToSqlTable((Map<String, List<String>>) map,"Table2","usaCity");
+		    mapdata=connect.readDataBase("Table2","usaCity");
+             mapdata1= connect.readDataBase("Table1","bdCity");
 
 			}catch (Exception e){
 				System.out.println("the error is "+e);
 			}
 
+
 			System.out.println(mapdata);
+			System.out.println(mapdata1);
 		}
 
 	}

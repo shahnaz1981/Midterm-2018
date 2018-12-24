@@ -8,7 +8,37 @@ public class Pattern {
 		 *
 		 *
 		 */
-		
+		int n=0;
+		for (int i = 100; i >= 0; i--) {
+			n++;
+			if (n <= 10) {
+				System.out.println(i + " ");
+			} else {
+				for (i = 90; i >= 0; i -= 2) {
+					if (n >= 10 && n <= 20) {
+						System.out.println(i + " ");
+						n++;
+					} else {
+						for (i = 70; i >= 0; i -= 3) {
+							if (n >= 20 && n <= 30) {
+								System.out.println(i + " ");
+								n++;
+							} else {
+								for (i = 40; i >= 0; i -= 4) {
+									if (n > 30 && n <= 40) {
+										System.out.println(i + " ");
+										n++;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
 
 
 	}
