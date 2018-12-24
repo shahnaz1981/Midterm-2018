@@ -34,10 +34,11 @@ public class UseArrayList {
 		ConnectToSqlDB connect = new ConnectToSqlDB();
 
 		//connect.insertDataFromStringToSqlTable(( ArrayList<String>) student, "Table","name");
-		try{connect.insertDataFromArrayListToSqlTable( student, "Table", "name");
-         connect.readDataBase("Table","name");}catch(Exception e){
-			System.out.println(e);
+		//try{connect.insertDataFromArrayListToSqlTable( student, "Table", "name");
+        // connect.readDataBase("Table","name");}catch(Exception e){
+		//	System.out.println(e);
 		}
 	}
 
-}
+
+
