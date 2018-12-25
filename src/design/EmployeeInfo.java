@@ -2,7 +2,7 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo {
+public  class EmployeeInfo extends  EmployeePro{
 	
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
@@ -20,8 +20,35 @@ public class EmployeeInfo {
 	/*
 	 * declare few static and final fields and some non-static fields
 	 */
+
+
+
 	static String companyName;
-	
+
+	public static int Salary =0;
+	public static int years = 0;
+	public int empAge;
+	private String countryName= "USA";
+	String name;
+
+	public EmployeeInfo(){}
+
+	public EmployeeInfo(int age){
+		this.empAge=age;
+		System.out.println(age);
+	}
+
+	public EmployeeInfo(String name, int age){
+		super();
+		this.empAge=age;
+		this.name=name;
+		System.out.println(name+" "+age);
+	}
+
+
+
+
+
 	/*
 	 * You must implement the logic for below 2 methods and 
 	 * following 2 methods are prototype as well for other methods need to be design,
@@ -32,25 +59,44 @@ public class EmployeeInfo {
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
-	public EmployeeInfo(int employeeId){
-		
+
+
+
+
+
+
+	public String getCountryName() {
+		return countryName;
+
 	}
-    public EmployeeInfo(String name, int employeeId){
-		
-	}
-	
+
+	//public void setCountryName(String countryName) {
+		//this.countryName = countryName;
+	//}
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
 	 * Then it will return the total yearly bonus. So you need to implement the logic.
 	 * Hints: 10% of the salary for best performance, 8% of the salary for average performance and so on. 
 	 * You can set arbitrary number for performance.
 	 * So you probably need to send 2 arguments.
+	 *
 	 * 
 	 */
-	public static int calculateEmployeeBonus(int numberOfYearsWithCompany){
-		int total=0;
+	public static double calculateEmployeeBonus(int salary, int performance) {
+		double total = 0;
+		if (performance >= 8)
+			total = salary+salary * .1;
+		else {
+			total = salary+salary * .08;
+		}
+		System.out.println("bonus" + total);
 		return total;
+
 	}
+	public void worktime() {
+		System.out.println("Employees should work 8 hours monday to thursday");}
+
+
 	
 	/*
 	 * This methods should calculate Employee Pension based on salary and numbers of years with the company.
@@ -70,9 +116,36 @@ public class EmployeeInfo {
 
         //implement numbers of year from above two dates
 		//Calculate pension
+		try {
+			EmployeeInfo.years = Integer.parseInt(convertedTodaysDate.substring(convertedTodaysDate.indexOf('/')+1,convertedTodaysDate.length()))- Integer.parseInt(convertedJoiningDate.substring(convertedJoiningDate.indexOf('/')+1,convertedJoiningDate.length()));
+			if (EmployeeInfo.years < 1){
+				System.out.println("who worked more than a year get pension");
+				return 0;
+			}
+
+		}catch (Exception e){
+			System.out.println("there was an error");
+		}
+
+		//Calculate pension
+		double pension = .05;
+		for(int i = 0; i< EmployeeInfo.years;i++){
+			pension += .05;
+		}
+		total = (int) (Salary*pension);
+		System.out.println("Pension: "+total);
 
 		return total;
+
+
 	}
+
+	@Override
+	public int calculateSalary() {
+		return 0;
+	}
+
+
 	private static class DateConversion {
 
 		public DateConversion(Months months){}
