@@ -132,7 +132,7 @@ public  class EmployeeInfo extends  EmployeePro{
 		for(int i = 0; i< EmployeeInfo.years;i++){
 			pension += .05;
 		}
-		total = (int) (Salary*pension);
+		total = (int) (Salary*  pension);
 		System.out.println("Pension: "+total);
 
 		return total;

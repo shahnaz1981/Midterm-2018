@@ -12,10 +12,11 @@ public class UseArrayList {
 		 * Demonstrate how to use ArrayList that includes add,peek,remove,retrieve elements.
 		 * Use For Each loop and while loop with Iterator to retrieve data.
 		 * Store all the sorted data into one of the databases.
-		 * 
-		 */new ArrayList<String>();
+		 *
+		 */
+		new ArrayList<String>();
 		ArrayList<String> student = new ArrayList<>();
-				student.add("Raj");
+		student.add("Raj");
 		student.add("Jhon");
 		student.add("Roni");
 		student.add("Jaj");
@@ -23,22 +24,24 @@ public class UseArrayList {
 		System.out.println(student.remove("Jhon"));
 		System.out.println(student);
 
-		Iterator it=student.listIterator();
-		while(it.hasNext()){
+		Iterator it = student.listIterator();
+		while (it.hasNext()) {
 			System.out.println(it.next());
 		}
 
-		for(String st:student){
+		for (String st : student) {
 			System.out.println(st);
 		}
 		ConnectToSqlDB connect = new ConnectToSqlDB();
 
-		//connect.insertDataFromStringToSqlTable(( ArrayList<String>) student, "Table","name");
-		//try{connect.insertDataFromArrayListToSqlTable( student, "Table", "name");
-        // connect.readDataBase("Table","name");}catch(Exception e){
-		//	System.out.println(e);
-		}
+		//connect.insertDataFromStringToSqlTable(  student, "Table","name");
+		/*try {
+			connect.insertDataFromArrayListToSqlTable(student, "Table", "name");
+			connect.readDataBase("Table", "name");
+		} catch (Exception e) {
+			System.out.println(e);
+		}*/
 	}
-
+}
 
 
