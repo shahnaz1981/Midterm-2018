@@ -6,7 +6,7 @@ public class UnitTestingStringProblem {
     public static void main(String[] args)throws java.lang.AssertionError {
         //Apply Unit Test into all the methods in this package.
 
-        
+
 
         //Unit test for the Longest word
         try {
