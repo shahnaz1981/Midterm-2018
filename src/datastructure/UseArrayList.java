@@ -4,6 +4,7 @@ import databases.ConnectToSqlDB;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class UseArrayList {
 
@@ -33,14 +34,14 @@ public class UseArrayList {
 			System.out.println(st);
 		}
 		ConnectToSqlDB connect = new ConnectToSqlDB();
+List list = student;
+		try{connect.insertDataFromArrayListToSqlTable(list , "Table","name");
 
-		//connect.insertDataFromStringToSqlTable(  student, "Table","name");
-		/*try {
-			connect.insertDataFromArrayListToSqlTable(student, "Table", "name");
+			//connect.insertDataFromArrayListToSqlTable(student, "Table", "name");
 			connect.readDataBase("Table", "name");
 		} catch (Exception e) {
 			System.out.println(e);
-		}*/
+		}
 	}
 }
 

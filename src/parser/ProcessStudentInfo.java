@@ -59,13 +59,18 @@ public class ProcessStudentInfo {
 				seleniumStudents = xmlReader.parseData(tag, pathSelenium);
 
 				//Parse Data using parseData method and then store data into Qtp ArrayList.
-				
+				qtpStudents =xmlReader.parseData(tag,pathQtp);
 				//add Selenium ArrayList data into map.
+				list.put("selenium Students",seleniumStudents);
 
 				//add Qtp ArrayList data into map.
-		
+				list.put("Qtp student",qtpStudents);
+
 		      	
 				//Retrieve map data and display output.
+				for(Map.Entry<String,List<Student>>st:list.entrySet() ){
+					System.out.println(st);
+				}
 
 
 

@@ -8,22 +8,30 @@ public class Palindrome {
          */
 
 
-        String str = "MOM";
-        String str2 = "";
+        String str3 = "WOW";
+        if (palindromeChecking(str3)) {
+            System.out.println(str3+ " is Palindrome");
+        }
+        else {
+            System.out.println(str3+" is not Palindrome");
+        }
+    }
 
-        for(int i = str.length()-1;i>=0;i--)
-        {
-            str2 += str.charAt(i);
-        }
 
-        if(str.equals(str2))
-        {
-            System.out.println(str + " is a palindrome!");
+    public static boolean palindromeChecking(String str1) {
+
+        String word = str1;
+        StringBuilder str2 = new StringBuilder();
+        int wordLength = word.length();
+
+        for (int i = 0; i < wordLength; i++) {
+            str2.append(word.charAt(wordLength - 1 - i));
         }
-        else
-        {
-            System.out.println(str + " is not a palindrome!");
-        }
+        String revPalindrome = new String(str2);
+
+        if (word.matches(revPalindrome))
+            return true;
+        else return false;
     }
 }
 
